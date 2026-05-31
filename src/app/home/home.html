@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="hero">
-    <h1 class="title">ZENLESS ZONE ZERO</h1>
+    <h1 class="title">ZZZ HOME</h1>
     <p class="subtitle">Agentes</p>
 
     <div class="search-wrapper">
@@ -27,5 +27,11 @@
       <button class="filter-btn" [class.active]="activeFilter === 'physical'" (click)="filterBy('physical')">💥 Físico</button>
       <button class="filter-btn" [class.active]="activeFilter === 'ether'" (click)="filterBy('ether')">🌀 Éter</button>
     </div>
+  </div>
+
+  <div class="grid">
+    @for (agente of filteredCharacters; track agente.id) {
+      <app-agente-card [agente]="agente" />
+    }
   </div>
 </div>

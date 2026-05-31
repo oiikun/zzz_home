@@ -1,0 +1,179 @@
+.roleta-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.roleta {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex-shrink: 0;
+}
+
+.disco {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.slot-1 { top: 20px;  left: 55px; }
+.slot-2 { top: 115px; left: 10px; }
+.slot-3 { bottom: 20px; left: 55px; }
+.slot-4 { bottom: 20px; right: 55px; }
+.slot-5 { top: 115px; right: 10px; }
+.slot-6 { top: 20px;  right: 55px; }
+
+.disco-inner {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #2e2e2e, #111);
+  border: 3px solid #1a1a1a;
+  outline: 3px solid rgba(168, 224, 0, 0.25);
+  outline-offset: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.05),
+    0 4px 15px rgba(0,0,0,0.6);
+}
+
+.disco:hover .disco-inner,
+.disco.ativo .disco-inner {
+  border-color: #a8e000;
+  outline-color: rgba(168, 224, 0, 0.6);
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.05),
+    0 0 20px rgba(168, 224, 0, 0.35);
+}
+
+.slot-num {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+}
+
+.disco.ativo .slot-num {
+  color: #a8e000;
+}
+
+.disco-nivel {
+  font-size: 0.6rem;
+  color: #ffb400;
+  background: rgba(0,0,0,0.7);
+  padding: 1px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* W-ENGINE CENTRO */
+.wengine-centro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.wengine-inner {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #1a1a2e, #05050f);
+  border: 4px solid #222;
+  outline: 4px solid rgba(168, 224, 0, 0.4);
+  outline-offset: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow:
+    inset 0 2px 8px rgba(255,255,255,0.05),
+    0 0 25px rgba(168, 224, 0, 0.15);
+}
+
+.wengine-centro:hover .wengine-inner,
+.wengine-centro.ativo .wengine-inner {
+  border-color: #a8e000;
+  outline-color: rgba(168, 224, 0, 0.8);
+  box-shadow:
+    inset 0 2px 8px rgba(255,255,255,0.05),
+    0 0 35px rgba(168, 224, 0, 0.4);
+}
+
+.wengine-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #a8e000;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.wengine-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.wengine-nivel {
+  font-size: 0.6rem;
+  color: #ffb400;
+  background: rgba(0,0,0,0.7);
+  padding: 1px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* PAINEL */
+.painel {
+  flex: 1;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 1.2rem;
+  min-width: 200px;
+}
+
+.painel-titulo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.painel-section {
+  margin-bottom: 0.8rem;
+}
+
+.painel-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.painel-valor {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+.painel-valor.destaque { color: #a8e000; }
+.painel-valor.alt { color: rgba(255,255,255,0.4); font-size: 0.8rem; }

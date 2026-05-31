@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Exo+2:wght@300;400;600&display=swap');
+
+@keyframes borderGlow {
+  0%   { border-color: #4466ff; }
+  33%  { border-color: #9933ff; }
+  66%  { border-color: #ff44aa; }
+  100% { border-color: #4466ff; }
+}
+
+.detalhe-container {
+  min-height: 100vh;
+  background-color: #000000;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  padding: 2rem;
+  font-family: 'Exo 2', sans-serif;
+  color: #fff;
+}
+
+.btn-voltar {
+  background: transparent;
+  border: 1px solid rgba(168, 224, 0, 0.4);
+  color: #a8e000;
+  padding: 0.5rem 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+}
+
+.btn-voltar:hover {
+  background: rgba(168, 224, 0, 0.1);
+}
+
+.detalhe-content {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agente-foto {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  animation: borderGlow 3s linear infinite;
+}
+
+.agente-foto img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.agente-nome-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.fracao {
+  font-size: 0.75rem;
+  color: #a8e000;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nome {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.3rem 0;
+}
+
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.badge.estilo { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+.badge.raridade.s { background: #ffb400; color: #000; }
+.badge.raridade.a { background: #7b68ee; color: #fff; }
+.badge.elemento.electric { background: rgba(100,180,255,0.2); color: #64b4ff; }
+.badge.elemento.fire     { background: rgba(255,100,50,0.2);  color: #ff6432; }
+.badge.elemento.ice      { background: rgba(100,220,255,0.2); color: #64dcff; }
+.badge.elemento.physical { background: rgba(200,200,200,0.2); color: #c8c8c8; }
+.badge.elemento.ether    { background: rgba(180,100,255,0.2); color: #b464ff; }
+
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 1rem;
+}
+
+.times-section {
+  margin-bottom: 1.5rem;
+}
+
+.times-grid {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.time-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.time-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s;
+}
+
+.time-card:hover img {
+  border-color: #a8e000;
+}
+
+.time-card span {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  max-width: 70px;
+}
+
+.abas {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.aba-btn {
+  background: rgba(255,255,255,0.04);
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgba(255,255,255,0.4);
+  padding: 0.8rem 1.2rem;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 90px;
+}
+
+.aba-btn:hover {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+
+.aba-btn.active {
+  background: rgba(168, 224, 0, 0.08);
+  border-bottom-color: #a8e000;
+  color: #a8e000;
+}
+
+.aba-icon {
+  font-size: 1.1rem;
+}
+
+.aba-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.stat-valor {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.stat-valor.destaque { color: #a8e000; }
+
+.build-section {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.build-section h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 0.5rem;
+}
+
+.build-section p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0.2rem 0;
+}
+
+.destaque { color: #a8e000; }
+.alt { color: rgba(255,255,255,0.4) !important; font-size: 0.8rem !important; }
+
+.sem-dados {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.times-grid-full {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.time-card-full {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.time-card-full:hover {
+  border-color: #a8e000;
+  background: rgba(168,224,0,0.05);
+}
+
+.time-card-full img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.time-info h4 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+
+.tag.estilo { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+.tag.electric { background: rgba(100,180,255,0.15); color: #64b4ff; }
+.tag.fire     { background: rgba(255,100,50,0.15);  color: #ff6432; }
+.tag.ice      { background: rgba(100,220,255,0.15); color: #64dcff; }
+.tag.physical { background: rgba(200,200,200,0.15); color: #c8c8c8; }
+.tag.ether    { background: rgba(180,100,255,0.15); color: #b464ff; }
+
+.prioridade-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1rem;
+}

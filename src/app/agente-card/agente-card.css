@@ -1,24 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Exo+2:wght@300;400;600&display=swap');
 
+@keyframes borderGlow {
+  0%   { border-color: #4466ff; box-shadow: 0 0 15px rgba(68, 102, 255, 0.4); }
+  33%  { border-color: #9933ff; box-shadow: 0 0 15px rgba(153, 51, 255, 0.4); }
+  66%  { border-color: #ff44aa; box-shadow: 0 0 15px rgba(255, 68, 170, 0.4); }
+  100% { border-color: #4466ff; box-shadow: 0 0 15px rgba(68, 102, 255, 0.4); }
+}
+
 .card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(168, 224, 0, 0.15);
+  background: rgba(10, 10, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: transform 0.25s;
   font-family: 'Exo 2', sans-serif;
 }
 
 .card:hover {
-  border-color: #a8e000;
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(168, 224, 0, 0.15);
+  animation: borderGlow 2s linear infinite;
 }
 
 .card-img {
   position: relative;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   aspect-ratio: 3/4;
   overflow: hidden;
 }
@@ -27,12 +33,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(20%);
-  transition: filter 0.25s;
+  transition: transform 0.3s;
 }
 
 .card:hover .card-img img {
-  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 .raridade {

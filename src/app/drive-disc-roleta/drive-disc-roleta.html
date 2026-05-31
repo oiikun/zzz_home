@@ -1,0 +1,70 @@
+<div class="roleta-wrapper">
+
+  <div class="roleta">
+    <!-- DISCOS -->
+    @for (disco of discos; track disco.slot) {
+      <div class="disco slot-{{ disco.slot }}"
+           [ngClass]="{ativo: selecionado === disco}"
+           (click)="selecionarDisco(disco)">
+        <div class="disco-inner">
+          <span class="slot-num">{{ disco.slot }}</span>
+        </div>
+        <span class="disco-nivel">S Nv. 15/15</span>
+      </div>
+    }
+
+    <!-- W-ENGINE NO MEIO -->
+    <div class="wengine-centro" [ngClass]="{ativo: tipoSelecionado === 'wengine'}" (click)="selecionarWEngine()">
+      <div class="wengine-inner">
+  <span class="wengine-label">W-ENGINE</span>
+  <span class="wengine-icon">⚙️</span>
+</div>
+      <span class="wengine-nivel">S Nv. 60/60</span>
+    </div>
+  </div>
+
+  <!-- PAINEL DE INFO -->
+  <div class="painel" *ngIf="selecionado">
+
+    <!-- INFO DO DISCO -->
+    <div *ngIf="tipoSelecionado === 'disco'">
+      <h3 class="painel-titulo">{{ selecionado.label }}</h3>
+      <div class="painel-section">
+        <span class="painel-label">Set Recomendado</span>
+        <p class="painel-valor destaque">{{ build.discos }}</p>
+      </div>
+      <div class="painel-section">
+        <span class="painel-label">Alternativo</span>
+        <p class="painel-valor alt">{{ build.discosAlternativos }}</p>
+      </div>
+      <div class="painel-section">
+        <span class="painel-label">Stat Principal</span>
+        <p class="painel-valor destaque">{{ selecionado.stat }}</p>
+      </div>
+    </div>
+
+    <!-- INFO DA W-ENGINE -->
+    <div *ngIf="tipoSelecionado === 'wengine'">
+      <h3 class="painel-titulo">W-Engine</h3>
+      <div class="painel-section">
+        <span class="painel-label">Melhor Opção</span>
+        <p class="painel-valor destaque">{{ build.wEngine }}</p>
+      </div>
+      <div class="painel-section">
+        <span class="painel-label">Alternativas</span>
+        @for (alt of build.wEngineAlternativas; track alt) {
+          <p class="painel-valor alt">• {{ alt }}</p>
+        }
+      </div>
+      <div class="painel-section">
+        <span class="painel-label">ATQ Básico</span>
+        <p class="painel-valor destaque">713</p>
+      </div>
+      <div class="painel-section">
+        <span class="painel-label">PV</span>
+        <p class="painel-valor">30%</p>
+      </div>
+    </div>
+
+  </div>
+</div>

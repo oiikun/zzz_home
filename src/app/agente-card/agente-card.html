@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="irParaDetalhe()">
   <div class="card-img">
     <img [src]="agente.imagem" [alt]="agente.nome" />
     <span class="raridade" [ngClass]="{s: agente.raridade === 'S', a: agente.raridade === 'A'}">

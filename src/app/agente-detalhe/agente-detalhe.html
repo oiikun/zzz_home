@@ -1,0 +1,122 @@
+<div class="detalhe-container" *ngIf="agente">
+
+  <button class="btn-voltar" (click)="voltar()">← Voltar</button>
+
+  <div class="detalhe-content">
+
+    <div class="detalhe-container" *ngIf="agente">
+
+  <button class="btn-voltar" (click)="voltar()">← Voltar</button>
+
+  <div class="detalhe-content">
+
+    <!-- ESQUERDA: foto -->
+    <div class="agente-foto">
+      <img [src]="agente.imagem" [alt]="agente.nome" />
+      <div class="agente-nome-overlay">
+        <span class="fracao">{{ agente.fracao }}</span>
+        <h1 class="nome">{{ agente.nome }}</h1>
+        <div class="badges">
+          <span class="badge elemento {{ agente.elemento }}">{{ agente.elemento }}</span>
+          <span class="badge estilo">{{ agente.estilo }}</span>
+          <span class="badge raridade" [ngClass]="{s: agente.raridade === 'S', a: agente.raridade === 'A'}">{{ agente.raridade }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIREITA -->
+    <div class="agente-info">
+
+      <!-- TIMES -->
+      <div class="times-section" *ngIf="times.length > 0">
+        <h3 class="section-title">Agentes Recomendados</h3>
+        <div class="times-grid">
+          @for (membro of times; track membro.id) {
+            <div class="time-card">
+              <img [src]="membro.imagem" [alt]="membro.nome" />
+              <span>{{ membro.nome }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- ABAS -->
+      <div class="abas">
+  <button class="aba-btn" [ngClass]="{active: abaAtiva === 'status'}" (click)="trocarAba('status')">
+    <span class="aba-icon">📊</span>
+    <span class="aba-label">STATUS</span>
+  </button>
+  <button class="aba-btn" [ngClass]="{active: abaAtiva === 'build'}" (click)="trocarAba('build')">
+    <span class="aba-icon">⚙️</span>
+    <span class="aba-label">BUILD</span>
+  </button>
+  <button class="aba-btn" [ngClass]="{active: abaAtiva === 'equipamento'}" (click)="trocarAba('equipamento')">
+    <span class="aba-icon">🛡️</span>
+    <span class="aba-label">EQUIPAMENTO</span>
+  </button>
+  <button class="aba-btn" [ngClass]="{active: abaAtiva === 'review'}" (click)="trocarAba('review')">
+    <span class="aba-icon">⭐</span>
+    <span class="aba-label">REVIEW</span>
+  </button>
+  <button class="aba-btn" [ngClass]="{active: abaAtiva === 'times'}" (click)="trocarAba('times')">
+    <span class="aba-icon">👥</span>
+    <span class="aba-label">TIMES</span>
+  </button>
+</div>
+      <!-- CONTEUDO ABAS -->
+      <div class="aba-conteudo">
+
+        <div class="aba-conteudo">
+
+  <!-- STATUS -->
+  <div *ngIf="abaAtiva === 'status' && agente.informacoes">
+  <p class="prioridade-label">Prioridade: <span class="destaque">{{ agente.informacoes.prioridade }}</span></p>
+  <div class="stat-grid">
+    <div class="stat"><span class="stat-label">PV</span><span class="stat-valor destaque">{{ agente.informacoes.pv }}</span></div>
+    <div class="stat"><span class="stat-label">ATQ</span><span class="stat-valor">{{ agente.informacoes.atq }}</span></div>
+    <div class="stat"><span class="stat-label">DEF</span><span class="stat-valor">{{ agente.informacoes.def }}</span></div>
+    <div class="stat"><span class="stat-label">Impacto</span><span class="stat-valor">{{ agente.informacoes.impacto }}</span></div>
+    <div class="stat"><span class="stat-label">Taxa CRIT</span><span class="stat-valor destaque">{{ agente.informacoes.taxaCrit }}</span></div>
+    <div class="stat"><span class="stat-label">Dano CRIT</span><span class="stat-valor destaque">{{ agente.informacoes.danoCrit }}</span></div>
+    <div class="stat"><span class="stat-label">Dano Físico</span><span class="stat-valor destaque">{{ agente.informacoes.danoFisico }}</span></div>
+    <div class="stat"><span class="stat-label">Força Bruta</span><span class="stat-valor">{{ agente.informacoes.forcaBruta }}</span></div>
+    <div class="stat"><span class="stat-label">Maestria Anomalia</span><span class="stat-valor">{{ agente.informacoes.maestriaAnomalia }}</span></div>
+    <div class="stat"><span class="stat-label">Acum. Adrenalina</span><span class="stat-valor">{{ agente.informacoes.acumulacaoAdrenalina }}</span></div>
+  </div>
+</div>
+
+  <!-- BUILD COM ROLETA -->
+  <div *ngIf="abaAtiva === 'build' && agente.build">
+    <app-drive-disc-roleta [build]="agente.build" />
+  </div>
+
+  <!-- EQUIPAMENTO -->
+  <div *ngIf="abaAtiva === 'equipamento' && agente.equipamento">
+    <div class="stat-grid">
+      <div class="stat"><span class="stat-label">Nível</span><span class="stat-valor destaque">{{ agente.equipamento.nivel }}</span></div>
+      <div class="stat"><span class="stat-label">Cinema</span><span class="stat-valor">{{ agente.equipamento.cinema }}</span></div>
+    </div>
+  </div>
+
+  <!-- REVIEW -->
+  <div *ngIf="abaAtiva === 'review'">
+    <p class="sem-dados">Review em breve...</p>
+  </div>
+
+  <!-- TIMES -->
+  <div *ngIf="abaAtiva === 'times'">
+    <div class="times-grid-full">
+      @for (membro of times; track membro.id) {
+        <div class="time-card-full">
+          <img [src]="membro.imagem" [alt]="membro.nome" />
+          <div class="time-info">
+            <h4>{{ membro.nome }}</h4>
+            <span class="tag elemento {{ membro.elemento }}">{{ membro.elemento }}</span>
+            <span class="tag estilo">{{ membro.estilo }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+</div>

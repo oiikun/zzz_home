@@ -8,7 +8,43 @@
   { "id": 7, "nome": "Banyue", "elemento": "fire", "estilo": "rupture", "raridade": "S", "imagem": "agentes/banyue.webp" },
   { "id": 8, "nome": "Ben", "elemento": "fire", "estilo": "defence", "raridade": "A", "imagem": "agentes/ben.webp" },
   { "id": 9, "nome": "Billy", "elemento": "physical", "estilo": "attack", "raridade": "A", "imagem": "agentes/billy.webp" },
-  { "id": 10, "nome": "Billy - Starlight", "elemento": "physical", "estilo": "rupture", "raridade": "S", "imagem": "agentes/billy-starlight.webp" },
+  { "id": 10, "nome": "Billy - Starlight",
+  "elemento": "physical", 
+  "estilo": "rupture", 
+  "raridade": "S", 
+  "imagem": "agentes/billy-starlight.webp",
+  "fracao": "Casa das Lebres Astutas",
+  "times": [25, 15, 32],
+  "informacoes": {
+  "pv": "18.000 ~ 20.000",
+  "atq": "Secundário",
+  "def": "Não prioritário",
+  "impacto": "Não prioritário",
+  "taxaCrit": "65% ~ 80%",
+  "danoCrit": "130% ~ 160%",
+  "maestriaAnomalia": "Não prioritário",
+  "forcaBruta": "2400 ~ 2600",
+  "acumulacaoAdrenalina": "Não prioritário",
+  "danoFisico": "15%+",
+  "prioridade": "HP > Taxa CRIT > Dano CRIT > Dano Físico"
+},
+  "build": {
+    "wEngine": "Starlight Rider Faceplate",
+    "wEngineAlternativas": ["Qingming Birdcage", "Cauldron of Clarity", "Grill O'Wisp"],
+    "discos": "Yunkui Tales x4 + Woodpecker Electro x2",
+    "discosAlternativos": "Yunkui Tales x4 + Branch & Blade Song x2",
+    "mainStats": {
+      "disco4": "CRIT Rate / CRIT DMG",
+      "disco5": "Physical DMG Bonus",
+      "disco6": "HP% / CRIT Rate / CRIT DMG"
+    },
+    "prioridade": "Habilidade Principal > Ataque Especial > Ataque Básico > Ataque em Cadeia"
+  },
+  "equipamento": {
+    "nivel": 60,
+    "cinema": "M1 recomendado"
+  }
+},
   { "id": 11, "nome": "Burnice", "elemento": "fire", "estilo": "anomaly", "raridade": "S", "imagem": "agentes/burnice.webp" },
   { "id": 12, "nome": "Caesar", "elemento": "physical", "estilo": "defence", "raridade": "S", "imagem": "agentes/caesar.webp" },
   { "id": 13, "nome": "Cissia", "elemento": "electric", "estilo": "attack", "raridade": "S", "imagem": "agentes/cissia.webp" },

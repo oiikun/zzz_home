@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Exo+2:wght@300;400;600&display=swap');
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 224, 0, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.card:hover {
+  border-color: #a8e000;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(168, 224, 0, 0.15);
+}
+
+.card-img {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: filter 0.25s;
+}
+
+.card:hover .card-img img {
+  filter: grayscale(0%);
+}
+
+.raridade {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.raridade.s {
+  background: #ffb400;
+  color: #0d0d0d;
+}
+
+.raridade.a {
+  background: #7b68ee;
+  color: #fff;
+}
+
+.card-info {
+  padding: 0.75rem;
+}
+
+.nome {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.tag.estilo {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.elemento.electric { background: rgba(100, 180, 255, 0.15); color: #64b4ff; }
+.elemento.fire     { background: rgba(255, 100, 50, 0.15);  color: #ff6432; }
+.elemento.ice      { background: rgba(100, 220, 255, 0.15); color: #64dcff; }
+.elemento.physical { background: rgba(200, 200, 200, 0.15); color: #c8c8c8; }
+.elemento.ether    { background: rgba(180, 100, 255, 0.15); color: #b464ff; }

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-img">
+    <img src="assets/placeholder.png" alt="{{ agente.nome }}" />
+    <span class="raridade" [ngClass]="{s: agente.raridade === 'S', a: agente.raridade === 'A'}">
+      {{ agente.raridade }}
+    </span>
+  </div>
+  <div class="card-info">
+    <h3 class="nome">{{ agente.nome }}</h3>
+    <div class="tags">
+      <span class="tag elemento {{ agente.elemento }}">{{ agente.elemento }}</span>
+      <span class="tag estilo">{{ agente.estilo }}</span>
+    </div>
+  </div>
+</div>

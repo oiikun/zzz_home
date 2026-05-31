@@ -1,0 +1,31 @@
+<div class="home-container">
+  <div class="hero">
+    <h1 class="title">ZENLESS ZONE ZERO</h1>
+    <p class="subtitle">Agentes</p>
+
+    <div class="search-wrapper">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Buscar agente..."
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+      />
+      <button class="search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn" [class.active]="activeFilter === 'todos'" (click)="filterBy('todos')">Todos</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'electric'" (click)="filterBy('electric')">⚡ Elétrico</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'fire'" (click)="filterBy('fire')">🔥 Fogo</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'ice'" (click)="filterBy('ice')">❄️ Gelo</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'physical'" (click)="filterBy('physical')">💥 Físico</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'ether'" (click)="filterBy('ether')">🌀 Éter</button>
+    </div>
+  </div>
+</div>

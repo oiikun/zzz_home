@@ -8,7 +8,7 @@ import { AgenteCardComponent } from '../agente-card/agente-card';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, CommonModule, NgClass, AgenteCardComponent],
+  imports: [FormsModule, CommonModule, AgenteCardComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })

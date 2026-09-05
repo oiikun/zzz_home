@@ -1,59 +1,72 @@
-# Zzzhome
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+---
 
-## Development server
+##  Como Rodar
 
-To start a local development server, run:
+### Pré-requisitos
+- Node.js 22+
+- Angular CLI 22+
+
+### Instalação
 
 ```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/zzzhome.git
+
+# Entre na pasta
+cd zzzhome
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse em: **http://localhost:4200**
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##  Download das Imagens
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para baixar as imagens dos agentes automaticamente:
 
 ```bash
-ng generate --help
+node download-imagens.js
 ```
 
-## Building
+As imagens serão salvas em `public/agentes/`.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+##  Rotas
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+| Rota | Componente | Descrição |
+|------|-----------|-----------|
+| `/` | HubComponent | Página principal |
+| `/zzz` | HomeComponent | Grid de agentes |
+| `/agente/:id` | AgenteDetalheComponent | Detalhes do agente |
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+##  Próximas Features
 
-```bash
-ng test
-```
+- [ ] Sistema de login e cadastro
+- [ ] Posts e comentários da comunidade
+- [ ] Suporte a Honkai: Star Rail
+- [ ] Suporte a Genshin Impact
+- [ ] Builds para todos os agentes
+- [ ] Times completos com sinergia
+- [ ] Review dos agentes
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+##  Contribuição
 
-```bash
-ng e2e
-```
+Projeto em desenvolvimento. Contribuições são bem-vindas!
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Licença
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT

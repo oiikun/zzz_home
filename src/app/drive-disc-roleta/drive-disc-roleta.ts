@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 
 @Component({
@@ -6,7 +6,8 @@ import { CommonModule, NgClass } from '@angular/common';
   standalone: true,
   imports: [CommonModule, NgClass],
   templateUrl: './drive-disc-roleta.html',
-  styleUrls: ['./drive-disc-roleta.css']
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./drive-disc-roleta.css'],
 })
 export class DriveDiscRoletaComponent {
   @Input() build: any;

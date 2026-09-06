@@ -1,0 +1,72 @@
+<div class="hub-container">
+  <div class="banner">
+
+    <div class="jogos-barra">
+      <div class="banner-jogos">
+        @for (jogo of jogos; track jogo.nome) {
+          <div class="jogo-item" [class.ativo]="jogo.ativo" [class.inativo]="!jogo.ativo" (click)="irParaBuilds(jogo)">
+            <div class="jogo-icone">
+              <img *ngIf="jogo.imagem" [src]="jogo.imagem" [alt]="jogo.nome" />
+              <span *ngIf="!jogo.imagem">?</span>
+            </div>
+            <span class="jogo-nome">{{ jogo.nome }}</span>
+            <span class="jogo-breve" *ngIf="!jogo.ativo">Em breve</span>
+            <div class="jogo-btn-builds" *ngIf="jogo.ativo">
+              <span>Ver Builds →</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="hub-content">
+      <div class="feed">
+        <div class="feed-abas">
+          @for (aba of abas; track aba) {
+            <button class="feed-aba" [class.active]="abaAtiva === aba.toLowerCase()" (click)="abaAtiva = aba.toLowerCase()">
+              {{ aba }}
+            </button>
+          }
+        </div>
+        <div class="posts">
+          @for (post of posts; track post.titulo) {
+            <div class="post-card">
+              <div class="post-header">
+                <div class="post-avatar">{{ post.autor[0] }}</div>
+                <div>
+                  <span class="post-autor">{{ post.autor }}</span>
+                  <span class="post-tempo">{{ post.tempo }}</span>
+                </div>
+              </div>
+              <h3 class="post-titulo">{{ post.titulo }}</h3>
+              <p class="post-desc">{{ post.descricao }}</p>
+              <div class="post-tags">
+                @for (tag of post.tags; track tag) {
+                  <span class="post-tag">{{ tag }}</span>
+                }
+              </div>
+              <div class="post-footer">
+                <span>👁 {{ post.visualizacoes }}</span>
+                <span>💬 {{ post.comentarios }}</span>
+                <span>❤️ {{ post.curtidas }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <h4 class="sidebar-titulo">Tópicos em Alta</h4>
+          @for (t of trending; track t.tag) {
+            <div class="trending-item">
+              <span class="trending-tag">{{ t.tag }}</span>
+              <span class="trending-info">{{ t.posts }} posts · {{ t.membros }} membros</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, NgClass],
   templateUrl: './agente-card.html',
-  styleUrls: ['./agente-card.css']
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./agente-card.css'],
 })
 export class AgenteCardComponent {
   @Input() agente: any;

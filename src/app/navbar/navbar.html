@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <span class="logo">GACHA<span class="logo-destaque">HUB</span></span>
+  </div>
+
+  <div class="navbar-center">
+    @for (jogo of jogos; track jogo.nome) {
+      <button class="jogo-btn"
+        [class.ativo]="jogo.ativo"
+        [class.inativo]="!jogo.ativo"
+        (click)="navegar(jogo.rota, jogo.ativo)">
+        {{ jogo.nome }}
+        <span class="em-breve" *ngIf="!jogo.ativo">em breve</span>
+      </button>
+    }
+  </div>
+
+  <div class="navbar-right">
+    <button class="btn-login">Entrar</button>
+  </div>
+</nav>

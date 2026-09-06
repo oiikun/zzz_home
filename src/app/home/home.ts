@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
@@ -10,7 +10,8 @@ import { AgenteCardComponent } from '../agente-card/agente-card';
   standalone: true,
   imports: [FormsModule, CommonModule, AgenteCardComponent],
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./home.css'],
 })
 export class HomeComponent {
   searchTerm = '';
@@ -29,7 +30,7 @@ export class HomeComponent {
   }
 
   applyFilters() {
-    this.filteredCharacters = this.allCharacters.filter(c => {
+    this.filteredCharacters = this.allCharacters.filter((c) => {
       const matchesSearch = c.nome.toLowerCase().includes(this.searchTerm.toLowerCase());
       const matchesFilter = this.activeFilter === 'todos' || c.elemento === this.activeFilter;
       return matchesSearch && matchesFilter;
